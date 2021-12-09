@@ -1,0 +1,33 @@
+#include <iostream>
+
+
+using namespace std;
+
+bool check_Elenushka(string word)
+{
+	int s = word.length();
+	for (int i = 0; i < s / 2; ++i)
+	{
+		if (word[i] != word[s - i - 1])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+int main()
+{
+	string str;
+	cout << "VVedite slovo:";
+	cin >> str;
+	if (check_Elenushka(str))
+	{
+		cout << "polindrom.";
+	}
+	else
+	{
+		cout << "ne polindrom";
+	}
+	return 0;
+}
